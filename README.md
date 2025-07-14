@@ -1,59 +1,88 @@
-# AppAngular
+# Proyecto Angular con Componentes de Angular Material
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.5.
+Este proyecto fue desarrollado en Angular utilizando Visual Studio Code. Consiste en una interfaz gráfica que muestra componentes de Angular Material, como botones, tarjetas, formularios, menús, listas, paginadores y más.
 
-## Development server
+El objetivo es tener un menú interactivo desde el cual se puede seleccionar cualquier componente y visualizar su comportamiento y estilos.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+Autora
+Martinez Lopez Fatima – Proyecto con Angular y Angular Material.
+
+---
+##  Tecnologías utilizadas
+
+- [Angular 20 ](https://angular.io/)
+- [Angular Material](https://material.angular.io/)
+- TypeScript
+- HTML / CSS
+- Visual Studio Code
+
+---
+
+##  Estructura del Proyecto
+
+El proyecto está organizado por carpetas, cada una conteniendo un componente individual, por ejemplo:
+
+![estructura](capturas_de_pantalla/formato.png)
+
+
+Cada subcarpeta contiene un componente `standalone` de Angular con su archivo `.ts`, `.html` y `.css`.
+
+---
+
+##  ¿Cómo funciona?
+
+En la vista principal (`app.html`) se encuentra un menú desplegable (`<select>` o `<mat-select>`) que permite al usuario seleccionar uno de los componentes.
+
+El componente seleccionado se muestra dinámicamente gracias a la vinculación con `[(ngModel)]` y la directiva `*ngIf`.
+
+Por ejemplo:
+
+```html
+<select [(ngModel)]="componenteSeleccionado">
+  <option value="button">Button</option>
+  <option value="card">Card</option>
+  ...
+</select>
+
+<app-button *ngIf="componenteSeleccionado === 'button'"></app-button>
+<app-card *ngIf="componenteSeleccionado === 'card'"></app-card>
+...
 ```
+##  Características principales
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Implementación de múltiples componentes UI de Angular Material.
 
-## Code scaffolding
+Menú dinámico para navegar entre componentes.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Código limpio y modular.
 
-```bash
-ng generate component component-name
-```
+Componentes independientes utilizando standalone: true.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## Capturas de Pantalla
 
-## Building
+A continuación se muestran ejemplos del funcionamiento:
 
-To build the project run:
 
-```bash
-ng build
-```
+![inicio](capturas_de_pantalla/inicio.png)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+![menu](capturas_de_pantalla/menu.png)
 
-## Running unit tests
+![Opcion1](capturas_de_pantalla/Opcion1.png)
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+![operaciones3](capturas_de_pantalla/Opcion2.png)
 
-```bash
-ng test
-```
+![operaciones4](capturas_de_pantalla/Opcion3.png)
 
-## Running end-to-end tests
+![operaciones5](capturas_de_pantalla/Opcion4.png)
 
-For end-to-end (e2e) testing, run:
+![inicio](capturas_de_pantalla/Opcion5.png)
 
-```bash
-ng e2e
-```
+## Demostración en Línea - GitHub Pages
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Puedes probar el funcionamiento de la librería directamente aquí:
 
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+[Ver demostración en línea](https://fatimamartinezlpz.github.io/LibreriaJavaScript/)
